@@ -1,73 +1,66 @@
+<br> <br>
 <div class="container">
-    <h2>Ajouter un  patients</h2>
-    <form >
-        <div class="col-sm-4 col-md-4 col-lg-4" >
-            <label >Cin</label>
-            
-            <input type="text"[(ngModel)]="newpat.cin" name="nom" class="form-control">
-            
+    <h2><i class="fas fa-plus"></i>Ajouter un patient</h2>
+    <form>
+        <div class="row">
+            <div class="col-sm-12">
+                <label>Cin</label>
+                <input type="text" [(ngModel)]="newpat.cin" name="cin" class="form-control">
             </div>
-   
-    <div class="col-sm-4 col-md-4 col-lg-4" >
-    <label >Nom</label>
-    
-    <input type="text"[(ngModel)]="newpat.nom" name="nom" class="form-control">
-    
-    </div>
+            <div class="col-sm-12">
+                <label>Nom</label>
+                <input type="text" [(ngModel)]="newpat.nom" name="nom" class="form-control">
+            </div>
+            <div class="col-sm-12">
+                <label>Prénom</label>
+                <input type="text" [(ngModel)]="newpat.prenom" name="prenom" class="form-control">
+            </div>
+        
+        
+            <div class="col-sm-12">
+                <label>Date de naissance</label>
+                <input type="date" [(ngModel)]="newpat.dateNaiss" name="dateNaissance" class="form-control">
+            </div>
 
-    <div class="col-sm-4 col-md-4 col-lg-4">
-    <label >Prénom</label>
-    
-    <input type="text"[(ngModel)]="newpat.prenom" name="prenom" class="form-control">
-    
-    </div>
+            <div class="col-sm-12">
+                <label>Adresse</label>
+                <input type="text" [(ngModel)]="newpat.adresse" name="adresse" class="form-control">
+            </div>
+            <div class="col-sm-12">
+                <label>Sexe</label><br>
+                <div>
+                    <input type="radio" [(ngModel)]="newpat.sexe" name="sexe" id="femme" value="femme">
+                    <label for="femme">Femme</label>
+                </div>
 
-    <div class="col-sm-4 col-md-4 col-lg-4">
-    <label >Date de naissance</label>
-    <input type="date" [(ngModel)]="newpat.dateNaiss" name="dateNaissance" class="form-control">
-    </div>
-    <div class="col-sm-2 col-md-2 col-lg-2">
-    <label >Adresse</label>
-    
-    <input type="text" [(ngModel)]="newpat.adresse" name="adresse" class="form-control">
-</div>
-
-<div class="col-sm-4 col-md-4 col-lg-4">
-    <label>Sexe</label><br>
-    <input type="radio" [(ngModel)]="newpat.sexe" name="sexe" id="femme" value="femme">
-    <label for="femme">Femme</label>
-    <input type="radio" [(ngModel)]="newpat.sexe" name="sexe" id="homme" value="homme">
-    <label for="homme">Homme</label>
-  </div>
-
-<div class="col-sm-2 col-md-2 col-lg-2">
-    <label >Telephone</label>
-    
-    <input type="text" [(ngModel)]="newpat.tel" name="telephone" class="form- control">
-</div>
-
-<div class="col-sm-2 col-md-2 col-lg-2">
-    <label > Assurance</label>
-    
-    <input type="text" [(ngModel)]="newpat.assurance" name="assurance" class="form- control">
-</div>
-
-
-<div class="col-sm-4 col-md-4 col-lg-4">
-    <label>Groupe</label>
-    <select class="form-control form-control-lg" name="grpid" [(ngModel)]="newCin">
-    <option *ngFor="let g of groups" [value]="g.idGrp"> {{g.nomGrp}}</option>
-    </select> 
-    </div>
-<br>
-<div class="mt-8">
-
-<button type="submit" (click)="ajouterPatient()" class="btn btn-success">Ajouter</button>
-
-</div>
-
-</form>
-</div>
+                <div>
+                    <input type="radio" [(ngModel)]="newpat.sexe" name="sexe" id="homme" value="homme">
+                    <label for="homme">Homme</label>
+                </div>
+            </div>
+     
+        
+            <div class="col-sm-12">
+                <label>Téléphone</label>
+                <input type="text" [(ngModel)]="newpat.tel" name="telephone" class="form-control">
+            </div>
+            <div class="col-sm-12">
+                <label>Assurance</label>
+                <input type="text" [(ngModel)]="newpat.assurance" name="assurance" class="form-control">
+            </div>
+            <div class="col-sm-12">
+                <label>Groupe</label>
+                <select class="form-control" name="grpid" [(ngModel)]="newCin">
+                    <option *ngFor="let g of groups" [value]="g.idGrp">{{g.nomGrp}}</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="mt-3">
+            <button type="submit" (click)="ajouterPatient()" class="btn btn-success">Ajouter</button>
+        </div>
+    </form>
+</div> <br> <br>
 <div>
     <app-patients></app-patients>
 </div>
