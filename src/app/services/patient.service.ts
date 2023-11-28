@@ -90,7 +90,7 @@ export class PatientService {
   viewGroupe(num: number) : Groupe{
     return this.tab_grp.find(g => g.idGrp == num )!
   }
-  
+
   listPatients(): patient[] {
     return this.tab_pat;
   }
