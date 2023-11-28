@@ -1,4 +1,9 @@
-
+<form name="f2" class="form-inline">
+    <div class="form-group mx-sm-3 mb-2 mt-2 ">
+    <label>Nom à chercher </label>
+    <input type="text" class="form-control" name="nom" class="form-control" #nomEtu>
+    </div>
+    </form>
 <div class="container">
     <div class="card shadow mb-4 bg-white">
     <div class="card-body">
@@ -16,15 +21,14 @@
             <th>Groupe</th>
         
             <th>Assurance</th>
-            <th>Resultat</th>
-            <th>Action</th>
+           
             
 
             
             
             </tr>
             </thead>
-            <tbody *ngFor="let p of tab_pat">
+            <tbody *ngFor="let p of list_pat">
             <tr >
             <td>{{p.cin}}</td>
             <td>{{p.nom}}</td>
@@ -37,26 +41,16 @@
             <td>{{p. assurance}}</td>
 
                
-            <td [ngStyle]="p.assurance !== 'CNAM' ? refuserStyle : accepterStyle">
-                {{ p.assurance !== 'CNAM' ? 'Refuser' : 'Accepter' }}
-            </td>
+            
             
            
 
-            <td>
-                 <!-- <a class="btn btn-danger" (click)=" suppPatient(p)">Supprimer</a> -->
-                 <a class="btn btn-warning" [routerLink]="['/UpdatePatient',p.cin]"> 
-                    <img src="../assets/img/edit.png" height="32" width="32"></a>
-
-                    <a class="btn btn-danger"  (click)=" suppPatient(p)"> 
-                    <img src="../assets/img/delete.png" height="32" width="32"></a>
             
-            </td>
 
             
             </tr>
             </tbody>
-            </table>
-            </div>
-            </div>
-            </div>
+        </table>
+        </div>
+    </div>
+</div>

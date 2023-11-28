@@ -1,0 +1,64 @@
+
+<div class="container">
+    <div>
+    <h2>Modifier un patients</h2> 
+    </div>
+    <form >
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <label >CIN</label>
+                <input readonly type="text" [(ngModel)]="patientCourant.cin" name="cin" class="form-control">
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+                <label >Nom</label>
+                <input type="text"[(ngModel)]="patientCourant.nom" name="nom" class="form-control">
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <label >Prénom</label>
+                <input type="text" [(ngModel)]="patientCourant.prenom" name="prenom" class="form-control">
+            </div>
+            <!----------groupe --------------------------------->
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <label>Groupe</label>
+                <select class="form-control form-control-lg" name="grpid" [(ngModel)]= "idgrpModified">
+                <option *ngFor="let g of groups" [value]="g.idGrp">{{g.nomGrp}}</option>
+                </select> 
+                </div>
+            <!--groupe--------------------------------->
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <label >Date de naissance</label>
+                <input type="date" [ngModel]=" patientCourant.dateNaiss" name="dateNaiss" (ngModelChange)="patientCourant.dateNaiss=$event"  class="form-control">
+            </div>
+
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <label >Adresse</label>
+                <input type="text" [(ngModel)]="patientCourant.adresse" name="adresse" class="form-control">
+            </div>
+            
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <label>Sexe</label><br>
+                <input type="radio" [(ngModel)]="patientCourant.sexe" name="sexe" id="femme" value="femme">
+                <label for="femme">Femme</label>
+                <input type="radio" [(ngModel)]="patientCourant.sexe" name="sexe" id="homme" value="homme">
+                <label for="homme">Homme</label>
+            </div>
+            
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <label >Telephone</label>
+                <input type="text" [(ngModel)]="patientCourant.tel" name="telephone" class="form- control">
+            </div>
+
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <label > Assurance</label>
+                <input type="text" [(ngModel)]="patientCourant.assurance" name="assurance" class="form- control">
+            </div>
+
+           
+            <br>
+
+            <div class="mt-2">
+            <button type="submit" (click)="modifPatient()" class="btn btn-success">Modifer</button>
+            </div>
+            </form>
+           </div>

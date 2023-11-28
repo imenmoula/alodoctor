@@ -9,10 +9,20 @@ import { PatientService } from '../services/patient.service';
 })
 export class PatientsComponent implements OnInit {
   tab_pat: patient[];
+  refuserStyle={'color':'red'};
+  accepterStyle={'color':'green'};
+
   constructor(private patientServ : PatientService) {
     this.tab_pat =this.patientServ.listPatients();
     }
-
+    suppPatient (p: patient) {
+      let rep = confirm("Etes-vous sûr de vouloir supprimer cet patient?"+p.nom +" "+ p.prenom+"?");
+      if (rep){
+      this.patientServ.delPatient(p);
+      console.log("Suppression avec succes :"+p.nom)
+      }
+ }
 
 ngOnInit():void{}
+
 }
