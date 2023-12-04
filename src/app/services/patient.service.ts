@@ -120,9 +120,20 @@ export class PatientService {
     this.delPatient(patient);
 
   }
-
-
-
-  ngOnInit(): void { }
+  
+getNbPatients():number{
+  return this.tab_pat.length;
+}
+getNbGroups(): number{
+  return this.tab_grp.length;
+}
+getAvgMoyennes():number{
+  let sum=0;
+  this.tab_pat.forEach(patient=>{
+    sum+= patient.grp.idGrp;
+  });
+  return sum/this.getNbPatients();
 }
 
+}
+ 

@@ -9,6 +9,8 @@ import { AddPatientComponent } from './add-patient/add-patient.component';
 import { FormsModule } from '@angular/forms';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
 import { SearchPatientComponent } from './search-patient/search-patient.component';
+import { ConnectComponent } from './connect/connect.component';
+import { DashbordComponent } from './dashbord/dashbord.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,9 @@ import { SearchPatientComponent } from './search-patient/search-patient.componen
     PatientsComponent,
     AddPatientComponent,
     UpdatePatientComponent,
-    SearchPatientComponent
+    SearchPatientComponent,
+    ConnectComponent,
+    DashbordComponent
   ],
   imports: [
     BrowserModule,
