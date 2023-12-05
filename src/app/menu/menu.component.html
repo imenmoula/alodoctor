@@ -20,22 +20,16 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
 
-        <!-- <ng-container *ngIf="userCourant"> -->
 
         <a class="nav-link" href="/patients">patiente</a>
-        <ng-container *ngIf="authServ.testerAdmin()">
+        <ng-container *ngIf="!authServ.testerAdmin()">
           <a class="nav-link" href="/add_patient">add patient</a>
         </ng-container>
         <a class="nav-link" href="/search-patient">Recherche Etudiant</a>
-        <ng-container>
-          <a class="nav-link" >[{{ userCourant }}]</a>
-        </ng-container>
+        
+          <a class="nav-link" >[{{ userCourant }}]  </a>
+        
         <a class="nav-link" (click)="disconnect()">Déconnexion</a>
-
-
-        <!-- <ng-container *ngIf="!userCourant">
-          <a class="nav-link" href="/connect">Se connecter</a>
-        </ng-container> -->
 
       </div>
     </div>

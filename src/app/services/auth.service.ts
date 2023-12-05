@@ -45,7 +45,8 @@ export class AuthService {
         connected =true;
         console.log("Connexion de ", unUser.nom, " - role :", unUser.role)
         localStorage.setItem('userCourant', unUser.nom);// stocker userCourant dans localStorage
-        localStorage.setItem('isConnected', 'true'); // stocker isConnected dans localStorage
+        localStorage.setItem('isConnected', 'true'); 
+        localStorage.setItem('roleCourant', 'true'); // stocker isConnected dans localStorage
       }
     });
   //   console.log('Email entré : ', user.email);
@@ -64,7 +65,9 @@ export class AuthService {
     localStorage.removeItem('userCourant');// supprimer userCourant de localStorage
     localStorage.removeItem('isConnected'); // supprimer isConnected de localStorage
   }
+
   testerAdmin(): boolean {
+   
     return this.roleCourant === 'ADMIN';
   }
   calculNbUsers() {

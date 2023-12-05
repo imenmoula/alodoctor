@@ -12,6 +12,7 @@ export class DashbordComponent {
   nbGrp:number=0;
   avgMoy:number=0;
   nbUsers:number=0;
+  
   constructor(private patientServ : PatientService,private AuthServ:AuthService) { 
     this.nbPat =this.patientServ.getNbPatients();
     this.avgMoy = this.patientServ.getAvgMoyennes();
