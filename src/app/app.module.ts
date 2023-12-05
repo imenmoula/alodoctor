@@ -11,6 +11,9 @@ import { UpdatePatientComponent } from './update-patient/update-patient.componen
 import { SearchPatientComponent } from './search-patient/search-patient.component';
 import { ConnectComponent } from './connect/connect.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ConnectHttpComponent } from './connect-http/connect-http.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +23,15 @@ import { DashbordComponent } from './dashbord/dashbord.component';
     UpdatePatientComponent,
     SearchPatientComponent,
     ConnectComponent,
-    DashbordComponent
+    DashbordComponent,
+    ForbiddenComponent,
+    ConnectHttpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule,FormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

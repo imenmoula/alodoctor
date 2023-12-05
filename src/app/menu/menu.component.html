@@ -1,32 +1,47 @@
 <style>
   .bg-deepskyblue {
-      background-color: deepskyblue !important;
+    background-color: deepskyblue !important;
   }
 </style>
 
 <head>
   <!-- Other meta tags and stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  
+
 </head>
 <nav class="navbar navbar-expand-sm bg-deepskyblue navbar-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/connect">
-        <i class="fas fa-user-md fa-1.5x"></i> Allo Doctor</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/patients">patiente</a>
-          <a class="nav-link" href="/add_patient">add patient</a>
-          <a class="nav-link" href="/search-patient" >Recherche Etudiant</a>
-          <a class="nav-link" href="/Dashboard" >Dashboard</a>
-          <a class="nav-link disabled" aria-disabled="true">Utilisateur</a>
-        </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/connect">
+      <i class="fas fa-user-md fa-1.5x"></i> Allo Doctor</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+
+        <!--<ng-container *ngIf="userCourant">-->
+        <ng-container *ngIf="authServ.testerAdmin()">
+        <a class="nav-link" href="/patients">patiente</a>
+
+        
+        <a class="nav-link" href="/add_patient">add patient</a>
+      
+        <a class="nav-link" href="/search-patient">Recherche Etudiant</a>
+
+        
+          <a class="nav-link">[{{userCourant}}]</a>
+        
+
+        <a class="nav-link" (click)="disconnect()">Déconnexion</a>
+
+        </ng-container>
+
+         <ng-container *ngIf="userCourant">
+          <a class="nav-link" href="/connect">Se connecter</a>
+        </ng-container> 
+
       </div>
     </div>
-  </nav>
-  
-  
-  
+  </div>
+</nav>
