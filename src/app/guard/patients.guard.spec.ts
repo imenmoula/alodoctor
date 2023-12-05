@@ -1,11 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
 
-import { patientsGuard } from './patients.guard';
 
-describe('patientsGuard', () => {
+import { patientGuard } from './patients.guard';
+
+describe('patientGuard', () => {
   const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => patientsGuard(...guardParameters));
+      TestBed.runInInjectionContext(() => patientGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

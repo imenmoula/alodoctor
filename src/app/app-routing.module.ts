@@ -7,14 +7,14 @@ import { SearchPatientComponent } from './search-patient/search-patient.componen
 import { ConnectComponent } from './connect/connect.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
-import { patientsGuard } from './services/patients.guard';
+import { patientGuard } from './guard/patients.guard'; 
 import { ConnectHttpComponent } from './connect-http/connect-http.component';
 
 
 const routes: Routes = [
   {path:"patients",component:PatientsComponent},
 //{path: "add_patient",component:AddPatientComponent},
-{path:"add-patient",component:AddPatientComponent, canActivate : [patientsGuard] },
+{path:"add-patient",component:AddPatientComponent, canActivate : [patientGuard] },
 {path: '', pathMatch: 'full', redirectTo: 'patients'},
 {path: "UpdatePatient/:num", component :UpdatePatientComponent},
 {path:"search-patient",component:SearchPatientComponent},
@@ -24,7 +24,7 @@ const routes: Routes = [
 { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, 
 { path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
 {path:"forbidden",component:ForbiddenComponent},
-{path:"connect",component:ConnectHttpComponent}
+{path:"connect",component:ConnectHttpComponent},
 ];
 
 @NgModule({

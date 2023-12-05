@@ -18,8 +18,7 @@ export class ConnectHttpComponent implements OnInit {
 Router) { }
  
  getUsers(): void {
- this.userServ.getUsers().subscribe(items => this.users = 
-items);
+ this.userServ.getUsers().subscribe(items => this.users = items);
  }
  disconnect() {
  this.isConnected = false;
