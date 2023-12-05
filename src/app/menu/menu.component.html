@@ -22,7 +22,7 @@
 
 
         <a class="nav-link" href="/patients">patiente</a>
-        <ng-container *ngIf="!authServ.testerAdmin()">
+        <ng-container *ngIf="authServ.testerAdmin()  == true">
           <a class="nav-link" href="/add_patient">add patient</a>
         </ng-container>
         <a class="nav-link" href="/search-patient">Recherche Etudiant</a>

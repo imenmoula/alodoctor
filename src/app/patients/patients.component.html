@@ -1,9 +1,4 @@
-
-
-
-
-
-    <div class="card shadow mb-12 bg-white">
+<div class="card shadow mb-12 bg-white">
         <div class="card-body">
             <h1><i class="fas fa-user"></i> Liste des patients</h1>
               <div class="table-responsive">
@@ -22,7 +17,7 @@
 
                             <th>Assurance</th>
                             <th>Resultat</th>
-                            <ng-container *ngIf="authServ.testerAdmin()">
+                            <ng-container *ngIf="authServ.testerAdmin()  == true">
                             <th>Action</th>
                         </ng-container>
 
@@ -50,7 +45,7 @@
 
 
 
-                            <td *ngIf="authServ.testerAdmin()">
+                            <td *ngIf="authServ.testerAdmin() == true">
 
                                   <!-- Edit button with Font Awesome icon -->
                                             <button class="btn btn-primary" [routerLink]="['/UpdatePatient',p.cin]">

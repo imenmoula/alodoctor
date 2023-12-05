@@ -46,7 +46,7 @@ export class AuthService {
         console.log("Connexion de ", unUser.nom, " - role :", unUser.role)
         localStorage.setItem('userCourant', unUser.nom);// stocker userCourant dans localStorage
         localStorage.setItem('isConnected', 'true'); 
-        localStorage.setItem('roleCourant', 'true'); // stocker isConnected dans localStorage
+        localStorage.setItem('roleCourant',unUser.role ); // stocker isConnected dans localStorage
       }
     });
   //   console.log('Email entré : ', user.email);
@@ -67,8 +67,10 @@ export class AuthService {
   }
 
   testerAdmin(): boolean {
-   
-    return this.roleCourant === 'ADMIN';
+   console.log('iciiii'+this.roleCourant);
+   console.log('iciiii 2 '+localStorage.getItem('roleCourant'));
+
+    return localStorage.getItem('roleCourant') === 'ADMIN';
   }
   calculNbUsers() {
     return this.users.length;// retourne la taille du tableau users
