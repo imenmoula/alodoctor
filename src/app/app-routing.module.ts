@@ -14,7 +14,7 @@ import { ConnectHttpComponent } from './connect-http/connect-http.component';
 const routes: Routes = [
   {path:"patients",component:PatientsComponent},
 //{path: "add_patient",component:AddPatientComponent},
-{path:"add-patient",component:AddPatientComponent,canActivate:[patientsGuard]},
+{path:"add-patient",component:AddPatientComponent, canActivate : [patientsGuard] },
 {path: '', pathMatch: 'full', redirectTo: 'patients'},
 {path: "UpdatePatient/:num", component :UpdatePatientComponent},
 {path:"search-patient",component:SearchPatientComponent},

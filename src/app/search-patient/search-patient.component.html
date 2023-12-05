@@ -5,7 +5,8 @@
             <form name="f1">
                 Choisir un critère de recherche :
                 <input type="radio" [(ngModel)]="critere" value="nom" name="critaier"> par nom
-                <input type="radio" [(ngModel)]="critere" value="group" name="critaier"> par groupe
+                <input type="radio" [(ngModel)]="critere" value="Groupe" name="critaier"> par groupe
+
                 <input type="radio" [(ngModel)]="critere" value="tel" name="critaier"> par telphone
             </form><br>
 
@@ -23,10 +24,12 @@
                         <option *ngFor="let gr of  list_grp" value={{gr.idGrp}}>{{gr.nomGrp}}</option>
                     </select>
                     </div>
-                    <!-- <div class="col-sm-2 col-md-2 col-lg-2" *ngSwitchCase="'tel'">
+
+                   
+                     <div class="col-sm-2 col-md-2 col-lg-2" *ngSwitchCase="'tel'">
                         <label>telphone </label>
                         <input type="number" class="form-control" name="tel" class="form-control" #telPat (keyup)="chercherParTelephone(telPat.value)">
-                    </div> -->
+                    </div> 
 
 
                     <div class="container">

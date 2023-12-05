@@ -29,12 +29,14 @@ export class SearchPatientComponent {
         }
       }
 
-      // chercherParTelephone(tel: string) { 
-      //   this.list_pat = this.patientserv.listPatients();
-      //   if (tel !== "") {
-      //     this.list_pat = this.list_pat.filter(p => p.tel == tel);
-      //   }
-      // }
+       chercherParTelephone(tel: string) { 
+         this.list_pat = this.patientserv.listPatients();
+         if (tel !== "") {
+          console.log(tel);
+           this.list_pat = this.list_pat.filter(p => p.tel === Number(tel));
+
+         }
+       }
       
 
       ngOnInit(){
