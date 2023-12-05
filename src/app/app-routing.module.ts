@@ -13,18 +13,15 @@ import { ConnectHttpComponent } from './connect-http/connect-http.component';
 
 const routes: Routes = [
   {path:"patients",component:PatientsComponent},
-//{path: "add_patient",component:AddPatientComponent},
 {path:"add-patient",component:AddPatientComponent, canActivate : [patientGuard] },
 {path: '', pathMatch: 'full', redirectTo: 'patients'},
 {path: "UpdatePatient/:num", component :UpdatePatientComponent},
 {path:"search-patient",component:SearchPatientComponent},
-{path:"connect",component:ConnectComponent},
-{path:'',pathMatch:'full',redirectTo:'connect'},
+//{path:"connect",component:ConnectComponent},
 { path: 'dashboard', component:DashbordComponent }, 
-{ path: '', redirectTo: '/dashboard', pathMatch: 'full' }, 
-{ path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
+{ path: '**', redirectTo: '/connect', pathMatch: 'full' },
 {path:"forbidden",component:ForbiddenComponent},
-{path:"connect",component:ConnectHttpComponent},
+{path:"connect", component:ConnectHttpComponent},
 ];
 
 @NgModule({

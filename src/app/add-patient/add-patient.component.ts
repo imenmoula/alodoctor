@@ -29,7 +29,7 @@ ajouterPatient() {
 
   this.newpat.grp = this.newGrp;
   this.patientService.addPatients(this.newpat);
-  this.router.navigate(['patient']);
+  this.router.navigate(['/add-patient']);
  }
  
 
