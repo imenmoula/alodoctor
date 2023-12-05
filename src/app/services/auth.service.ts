@@ -18,17 +18,17 @@ export class AuthService {
       email: "admin@gmail.com",
       mot2pass: 'azerty',
       nom: "Administrateur",
-      role: 'ADMIN',
+      role:'ADMIN',
       tel: '222222222',
       adresse: 'nahj sidi ben issa',
     },
     {
       email: "imenmoula@gmail.com",
-      mot2pass:'2002',
+      mot2pass:'123',
       nom: 'imenmoula',
-      role: 'AGENT',
-      tel: '212121212',
-      adresse: 'nahj sidi ben issa',
+      role:'AGENT',
+      tel:'212121212',
+      adresse:'nahj sidi ben issa',
     }
 
   ];
@@ -48,6 +48,12 @@ export class AuthService {
         localStorage.setItem('isConnected', 'true'); // stocker isConnected dans localStorage
       }
     });
+  //   console.log('Email entré : ', user.email);
+  // console.log('Mot de passe entré : ', user.mot2pass);
+  // console.log('Utilisateur actuel : ', this.userCourant);
+  // console.log('Rôle actuel : ', this.roleCourant);
+  // console.log('Est connecté : ', this.isConnected);
+
     return connected;
   }
   disconnect() {

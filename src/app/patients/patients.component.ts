@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { patient } from '../model/patient.model';
 import { PatientService } from '../services/patient.service';
-
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-patients',
   templateUrl: './patients.component.html',
@@ -12,7 +12,7 @@ export class PatientsComponent implements OnInit {
   refuserStyle={'color':'red'};
   accepterStyle={'color':'green'};
 
-  constructor(private patientServ : PatientService) {
+  constructor(private patientServ : PatientService,public authServ:AuthService) {
     this.tab_pat =this.patientServ.listPatients();
     }
     suppPatient (p: patient) {

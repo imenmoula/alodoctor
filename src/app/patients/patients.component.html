@@ -22,7 +22,9 @@
 
                             <th>Assurance</th>
                             <th>Resultat</th>
+                            <ng-container *ngIf="authServ.testerAdmin()">
                             <th>Action</th>
+                        </ng-container>
 
 
 
@@ -48,7 +50,7 @@
 
 
 
-                            <td>
+                            <td *ngIf="authServ.testerAdmin()">
 
                                   <!-- Edit button with Font Awesome icon -->
                                             <button class="btn btn-primary" [routerLink]="['/UpdatePatient',p.cin]">

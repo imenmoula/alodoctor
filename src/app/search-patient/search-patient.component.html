@@ -1,67 +1,72 @@
 <div class="container">
     <div class="card shadow mb-4">
-      <div class="card-body">
-        <h1>Recherche des patients</h1>
-        <form name="f1">
-            Choisir un critère de recherche :
-            <input type="radio" [(ngModel)]="critere" value="nom" name="critaier"> par nom
-            <input type="radio" [(ngModel)]="critere" value="group" name="critaier"> par groupe
-            <!--<input type="radio" [(ngModel)]="critere" value="moy" name="critaier"> par moyenne-->
-           </form><br>
+        <div class="card-body">
+            <h1>Recherche des patients</h1>
+            <form name="f1">
+                Choisir un critère de recherche :
+                <input type="radio" [(ngModel)]="critere" value="nom" name="critaier"> par nom
+                <input type="radio" [(ngModel)]="critere" value="group" name="critaier"> par groupe
+                <input type="radio" [(ngModel)]="critere" value="tel" name="critaier"> par telphone
+            </form><br>
 
-<div [ngSwitch]="critere">
-    <form name="f2" class="form-inline">
-        <div class="form-group mx-sm-3 mb-2 mt-2 " *ngSwitchCase="'nom'">
-            <label>Nom à chercher </label>
-            <input type="text" class="form-control" name="nom" class="form-control" #nomPat (keyup)="chercherParNom(nomPat.value)">
-        
-</div>
-        
-<div class="form-group" *ngSwitchCase="'Groupe'"> Groupe <select class="form-control form-control-lg" name="grpid" [(ngModel)]="gripidRech " (change)="chercherParGrp()">
-            <option value="0">Tous</option>
-            <option *ngFor="let gr of list_grp" value={{gr.idGrp}}>{{gr.nomGrp}}</option>
-        </select>
-</div>
+            <div [ngSwitch]="critere">
+                <form name="f2" class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2 mt-2 " *ngSwitchCase="'nom'">
+                        <label>Nom à chercher </label>
+                        <input type="text" class="form-control" name="nom" class="form-control" #nomPat (keyup)="chercherParNom(nomPat.value)">
+
+                    </div>
+
+                  
+                    <div class="form-group" *ngSwitchCase="'Groupe'"> Groupe <select class="form-control form-control-lg" name="grpid" [(ngModel)]="gripidRech" (change)="chercherParGrp()">
+                        <option value="0">Tous</option>
+                        <option *ngFor="let gr of  list_grp" value={{gr.idGrp}}>{{gr.nomGrp}}</option>
+                    </select>
+                    </div>
+                    <!-- <div class="col-sm-2 col-md-2 col-lg-2" *ngSwitchCase="'tel'">
+                        <label>telphone </label>
+                        <input type="number" class="form-control" name="tel" class="form-control" #telPat (keyup)="chercherParTelephone(telPat.value)">
+                    </div> -->
 
 
-<div class="container">
-    <div class="card shadow mb-4 bg-white">
-    <div class="card-body">
-    <h1>Liste des patients</h1>
-    <table width="100%">
-        <thead>
-            <tr>
-            <th>Cin</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Date de naissance</th>
-            <th>Sexe</th>
-            <th>Numero de telphone</th>
-            <th>Adresse</th>
-            <th>Groupe</th>
-        
-            <th>Assurance</th>
-           
-            
+                    <div class="container">
+                        <div class="card shadow mb-4 bg-white">
+                            <div class="card-body">
+                                <h1>Liste des patients</h1>
+                                <table width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Cin</th>
+                                            <th>Nom</th>
+                                            <th>Prénom</th>
+                                            <th>Date de naissance</th>
+                                            <th>Sexe</th>
+                                            <th>Numero de telphone</th>
+                                            <th>Adresse</th>
+                                            <th>Groupe</th>
 
-            
-            
-            </tr>
-            </thead>
-            <tbody *ngFor="let p of list_pat">
-            <tr >
-            <td>{{p.cin}}</td>
-            <td>{{p.nom}}</td>
-            <td>{{p. prenom}}</td>
-            <td>{{p.dateNaiss | date:'dd/MM/yyyy'}}</td>
-            <td>{{p.sexe}}</td>
-            <td>{{p. tel}}</td>
-            <td>{{p.adresse}}</td>
-            <td>{{p.grp.nomGrp}}</td>
-            <td>{{p. assurance}}</td>
-            </tr>
-            </tbody>
-        </table>
-        </div>
-    </div>
-</div>
+                                            <th>Assurance</th>
+
+
+
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngFor="let p of list_pat">
+                                        <tr>
+                                            <td>{{p.cin}}</td>
+                                            <td>{{p.nom}}</td>
+                                            <td>{{p. prenom}}</td>
+                                            <td>{{p.dateNaiss | date:'dd/MM/yyyy'}}</td>
+                                            <td>{{p.sexe}}</td>
+                                            <td>{{p. tel}}</td>
+                                            <td>{{p.adresse}}</td>
+                                            <td>{{p.grp.nomGrp}}</td>
+                                            <td>{{p. assurance}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>

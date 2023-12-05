@@ -45,7 +45,7 @@ export class PatientService {
       //3eme patient 
       {
         cin: 333,
-        nom: "moula",
+        nom: "Moula",
         prenom: "nour el houda",
         dateNaiss: new Date("04/02/1995"),
         tel: 33366655,
@@ -60,8 +60,8 @@ export class PatientService {
       //4eme patient
       {
         cin: 444,
-        nom: "charrada",
-        prenom: "ghalia",
+        nom: "Chabbanne",
+        prenom: "fayrouze",
         dateNaiss: new Date("04/12/2021"),
         tel: 11222336,
         adresse: "dar chabenne",
@@ -83,7 +83,7 @@ export class PatientService {
     ]
   }
 
-  listeGroupe() {
+  listeGroupe():Groupe[] {
     return this.tab_grp;
   }
 

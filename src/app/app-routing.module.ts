@@ -22,7 +22,7 @@ const routes: Routes = [
 {path:'',pathMatch:'full',redirectTo:'connect'},
 { path: 'dashboard', component:DashbordComponent }, 
 { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, 
-//{ path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
+{ path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
 {path:"forbidden",component:ForbiddenComponent},
 {path:"connect",component:ConnectHttpComponent}
 ];

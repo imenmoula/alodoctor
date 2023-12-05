@@ -22,12 +22,20 @@ export class SearchPatientComponent {
       this.list_pat = this.list_pat.filter(p=> p.nom.toLocaleLowerCase().includes(name.toLocaleLowerCase()))
       }
       ///chercher par groupe 
-      chercherParGrp() {
+      chercherParGrp(){
         this.list_pat = this.patientserv.listPatients();
         if (this.gripidRech != 0) {
           this.list_pat = this.list_pat.filter(p => p.grp.idGrp == this.gripidRech)
         }
       }
+
+      // chercherParTelephone(tel: string) { 
+      //   this.list_pat = this.patientserv.listPatients();
+      //   if (tel !== "") {
+      //     this.list_pat = this.list_pat.filter(p => p.tel == tel);
+      //   }
+      // }
+      
 
       ngOnInit(){
         this.list_grp = this.patientserv.listeGroupe()
